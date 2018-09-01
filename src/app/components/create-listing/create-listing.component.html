@@ -1,0 +1,42 @@
+<div class="container">
+  <h1>Create Listing</h1>
+  <form [formGroup]="form" (ngSubmit)="createListing()">
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input type="text" class="form-control" formControlName="title" [(ngModel)]="model.title" required>
+    </div>
+    <div class="form-group">
+      <label for="description">Description</label>
+      <input type="text" class="form-control" formControlName="description" [(ngModel)]="model.description" required>
+    </div>
+    <div class="form-group">
+      <label for="brand">Brand</label>
+      <input type="text" class="form-control" formControlName="brand" [(ngModel)]="model.brand" required>
+    </div>
+    <div class="form-group">
+      <label for="model">Model</label>
+      <input type="text" class="form-control" formControlName="model" [(ngModel)]="model.model" required>
+    </div>
+    <div class="form-group">
+      <label for="year">Year</label>
+      <input type="text" class="form-control" formControlName="year" [(ngModel)]="model.year" required>
+    </div>
+    <div class="form-group">
+      <label for="imageUrl">imageUrl</label>
+      <input type="text" class="form-control" formControlName="imageUrl" [(ngModel)]="model.imageUrl" required>
+    </div>
+    <div class="form-group">
+      <label for="fuelType">FuelType</label>
+      <input type="text" class="form-control" formControlName="fuelType" [(ngModel)]="model.fuelType" required>
+    </div>
+    <div class="form-group">
+      <label for="price">Price</label>
+      <input type="text" class="form-control" formControlName="price" [(ngModel)]="model.price" required>
+    </div>
+    <button type="submit" class="cartube-button">Create Listing</button>
+  </form>
+
+  <div *ngIf="createListingFailed">
+    {{errMessage}}
+  </div>
+</div>

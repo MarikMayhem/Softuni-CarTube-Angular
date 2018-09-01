@@ -1,0 +1,15 @@
+<div id="listings">
+  <div class="listing">
+    <h1>{{carsData.title}}</h1>
+    <p><span>Brand:</span> {{carsData.brand}}<span>&nbsp;&nbsp;&nbsp;Model:</span> {{carsData.model}}</p>
+    <p><span>Year: </span>{{carsData.year}}<span>&nbsp;&nbsp;&nbsp;Fuel:</span> {{carsData.fuelType}}</p>
+    <p id="price"><span>Price:</span> {{carsData.price}}$</p>
+    <img src="{{carsData.imageUrl}}" alt="carImage">
+    <h2>Description</h2>
+    <p id="description">{{carsData.description}}</p>
+    <div *ngIf="carsData._acl.creator === creatorId || authService.isAdmin()">
+      <button type="submit" class="cartube-button" (click)="editListing(carsData._id)">Edit</button>
+      <button type="submit" class="cartube-button" (click)="deleteListing(carsData._id)">Delete</button>
+    </div>
+  </div>
+</div>
